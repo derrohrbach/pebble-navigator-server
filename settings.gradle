@@ -1,0 +1,4 @@
+rootProject.name = 'pebble-navigator-server'
+
+// Subprojekt für public-transport-enabler einbinden
+include 'public-transport-enabler'

@@ -1,0 +1,46 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group = 'de.derrohrbach.pbnavigator'
+version = '1.0.0'
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // Javalin - Aktuelle Version 6.7.0
+    implementation 'io.javalin:javalin:6.7.0'
+    
+    // JSON-Mapper für Javalin (erforderlich in Version 6+)
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.17.2'
+    
+    // Logging (Javalin benötigt einen Logger)
+    implementation 'org.slf4j:slf4j-simple:2.0.17'
+    
+    // Public Transport Enabler als lokales Projekt
+    implementation project(':public-transport-enabler')
+    
+    // Test dependencies
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.0'
+}
+
+application {
+    mainClass = 'de.derrohrbach.pbnavigator.Main'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+// Gradle Wrapper Task
+wrapper {
+    gradleVersion = '8.14'
+}

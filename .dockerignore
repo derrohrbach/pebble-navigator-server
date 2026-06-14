@@ -1,0 +1,8 @@
+.gradle/
+build/
+public-transport-enabler/.gradle/
+public-transport-enabler/build/
+*.class
+.idea/
+*.iml
+.vscode/
